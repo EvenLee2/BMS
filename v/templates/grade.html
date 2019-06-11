@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的成绩</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>课程号</th>
+        <th>成绩___绩点</th>
+    </tr>
+    {% for field in information if field.widget.input_type != 'hidden'%}
+			<tr>
+                <td>{{ field.label }}</td>
+                <td> {{ field.data }}</td>
+            </tr>
+    {% endfor %}
+</table>
+<p><button style="float: left" type="submit"><a href="http://localhost:5000/meStudent/{{user_id}}">返回</a></button></p>
+</body>
+</html>

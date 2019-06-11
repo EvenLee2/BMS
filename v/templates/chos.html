@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选课</title>
+</head>
+<body>
+
+<script>
+function myFunction(var1)
+{
+    if(var1 == 1) {
+		alert("选课成功");
+	} else if(var1 == 2) {
+		alert("选课失败");
+    }
+}
+var g = {{ flag }};
+myFunction(g);
+g = 0;
+</script>
+
+<table border="1">
+    <tr>
+        <th>序号</th>
+        <th>课程号___课程名___先修课___学分___老师___老师ID</th>
+    </tr>
+    {% for field in information if field.widget.input_type != 'hidden'%}
+			<tr>
+                <td>{{ field.label }}</td>
+                <td> {{ field.data }}</td>
+            </tr>
+    {% endfor %}
+</table>
+
+ <table border="1" cellspacing="0" bordercolor="#9DCFFF">
+
+    <tr>
+        <td bgcolor="#E7FBFF" align="right">选课的序号:</td>
+        <td><input type="text" value="" maxlength="2" name="num" size="3"/></td>
+    </tr>
+
+ </table>
+<p><button style="float: left" type="submit"><a href="http://localhost:5000/chos/{{user_id}}" >选课</a></button></p>
+<br><br>
+<p><button style="float: left" type="submit"><a href="http://localhost:5000/meStudent/{{user_id}}">返回</a></button></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>meTeacher</title>
+</head>
+
+
+<body>
+<br>
+<form>
+    <table border="1" cellspacing="0" bordercolor="#9DCFFF">
+        {% for field in user_information if field.widget.input_type != 'hidden'%}
+        <tr>
+            <td>{{ field.label }}</td><td>{{ field.data }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+<br>
+<p><button style="float: left" type="submit"><a href="http://localhost:5000/info_t/{{user_id}}">基本个人信息</a></button></p><br><br>
+<p><button style="float: left" type="submit"><a href="http://localhost:5000/course_t/{{user_id}}">我的课程</a></button></p><br><br>
+<p><button style="float: left" type="submit"><a href="http://localhost:5000/insert">人员录入</a></button></p><br><br>
+<p><button style="float: left" type="submit"><a href="http://localhost:5000/me_t/{{user_id}}">返回</a></button></p>
+
+</body>
+
+</html>

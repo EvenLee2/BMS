@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>从文件录入新生基本信息</title>
+</head>
+
+ 
+<body>
+<div> <form action = "http://localhost:5000/insert" method = "post">
+<script>
+function myFunction(var1)
+{
+    if(var1 == 1)
+	{
+		alert("录入成功");
+	}
+}
+var g = {{ flag }};
+myFunction(g);
+g = 0;
+</script>
+
+<form>
+<table border="1" cellspacing="0" bordercolor="#9DCFFF">
+ 
+<tr>
+<td bgcolor="#E7FBFF" align="right">录入类型:</td>
+<td>
+<select name="type">
+<option value="">[请选择]</option>
+<option value="teacher">老师</option>
+<option value="student">学生</option>
+</select></td>
+</tr>
+
+<tr>
+<td bgcolor="#E7FBFF" align="right">输入文档的绝对路径:</td>
+<td><input type="text" name="input_file_name" size="30" maxlength="30"/></td>
+</tr>
+
+</table>
+</form>
+
+<p><button style="float: left" type="submit">确认</button></p>
+
+</form></div>
+</body>
+
+</html>

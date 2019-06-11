@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改个人信息</title>
+</head>
+
+<body>
+<script>
+function myFunction(var1)
+{
+    if(var1 == 1) {
+		alert("姓名不可更改");
+	} else if(var1 == 2) {
+		alert("学号不可更改");
+    } else if(var1 == 3) {
+		alert("学院不可更改");
+	} else if(var1 == 4) {
+		alert("手机号码输入格式不正确");
+	} else if(var1 == 5) {
+		alert("邮箱格式输入不正确");
+	}else if(var1 == 6) {
+		alert("两次密码输入不相同");
+	}
+}
+var g = {{ flag }};
+myFunction(g);
+g = 0;
+</script>
+
+    <table border="1" cellspacing="0" bordercolor="#9DCFFF">
+
+
+    <tr>
+        <td bgcolor="#E7FBFF" align="right">姓名:</td>
+        <td><input type="text" value="" maxlength="10" name="name" size="20"/><font>(不可更改)</font></td>
+    </tr>
+
+
+    <tr >
+        <td  bgcolor="#E7FBFF"align="right">学号:</td>
+        <td><input type="text" name="std_id" value="" maxlength="10" size="20"/><font>(不可更改)</font></td>
+    </tr>
+
+     <tr>
+        <td bgcolor="#E7FBFF" align="right">性别:</td>
+        <td><input type="radio" name="sex" value="男" checked="checked"/>男<input type="radio" name="sex" value="女">女<font>(不可更改)</font></td>
+     </tr>
+
+    <tr>
+        <td bgcolor="#E7FBFF" align="right">生日:</td>
+        <td></label><input type="date" name="birth"/></td>
+    </tr>
+
+    <tr >
+        <td  bgcolor="#E7FBFF"align="right">学院:</td>
+        <td><input type="text" name="dept" value="" maxlength="10" size="20"/><font>(不可更改)</font></td>
+    </tr>
+
+    <tr >
+        <td  bgcolor="#E7FBFF"align="right">专业:</td>
+        <td><input type="text" name="major" value="" maxlength="10" size="20"/></td>
+    </tr>
+
+    <tr>
+        <td bgcolor="#E7FBFF" align="right">电话号码</td>
+        <td><input type="text" name="tele" size="20" maxlength="11"/><font>(必须为正确的11位手机号)</font></td>
+    </tr>
+
+    <tr>
+        <td bgcolor="#E7FBFF" align="right">电子邮箱</td>
+        <td><input type="text" name="email" size="20" maxlength="20"/><font>(必须包含@字符)</font></td>
+    </tr>
+    <tr>
+        <td bgcolor="#E7FBFF" align="right">密码:</td>
+        <td><input type="password" name="std_psd" size="20" maxlength="20"/><font>(6~20个字符)</font></td>
+    </tr>
+
+    <tr>
+        <td bgcolor="#E7FBFF" align="right">再次输入密码:</td>
+        <td><input type="password" name="std_psd2" size="20" maxlength="20"/></td>
+    </tr>
+
+
+</table>
+
+<p><button style="float: left" type="submit"><a href="http://localhost:5000/meStudent/{{ user_id}}">保存并返回</a></button></p>
+
+</body>
+
+</html>

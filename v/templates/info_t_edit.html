@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改个人信息</title>
+</head>
+
+<body>
+
+<form action = "http://localhost:5000/info_t_edit/{{user_id}}" method = "post">
+    <table border="1" cellspacing="0" bordercolor="#9DCFFF">
+        {% for field in user_information if field.widget.input_type != 'hidden'%}
+        <tr>
+            <td>{{ field.label }}</td>
+            <td><input type="text" value="" maxlength="10" name={{ field.label }} size="20" placeholder={{ field.data }} /></td>
+        </tr>
+        {% end for %}
+    </table>
+ </form>
+
+<p><button style="float: left" type="submit"><a href="http://localhost:5000/info_t/{{ user_id}}">保存</a></button></p>
+
+</body>
+</html>

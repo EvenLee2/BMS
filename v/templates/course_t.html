@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的课程</title>
+</head>
+
+<body>
+<table border="1">
+    <tr>
+        <th>课程号</th>
+        <th>课程名_____先修课_____学分</th>
+    </tr>
+    {% for field in crs_information if field.widget.input_type != 'hidden'%}
+			<tr>
+                <td><u> <a href='http://localhost:5000/one_course/{{field.label}}'>{{ field.label }}</a></u></td>
+                <td> {{ field.data }}</td>
+            </tr>
+    {% endfor %}
+</table>
+<p><button style="float: left" type="submit"><a href="http://localhost:5000/meTeacher/{{user_id}}">返回</a></button></p>
+</body>
+</html>
